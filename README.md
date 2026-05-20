@@ -1,5 +1,15 @@
 **AI Multi-Agent Research System**
 
+> Production-grade AI multi-agent orchestration system built with LangGraph, Streamlit, Groq, and Tavily.
+
+🌐 **Live Demo:**  
+https://langgraph-research-agent-sanjfotwepthyyxadgczyc.streamlit.app/
+
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![LangGraph](https://img.shields.io/badge/LangGraph-Agent%20Workflow-black)
+![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-red)
+![Groq](https://img.shields.io/badge/LLM-Groq-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
 A production-style multi-agent AI research backend built using:
 
 - LangGraph
@@ -21,7 +31,7 @@ A production-style multi-agent AI research backend built using:
 
  **Architecture**
 
-FastAPI → LangGraph → Supervisor → Researcher → Writer → Critic
+Streamlit → LangGraph → Supervisor Agent → Researcher / Writer / Critic
 
 **How It Works**
 
@@ -34,24 +44,6 @@ FastAPI → LangGraph → Supervisor → Researcher → Writer → Critic
 7. If the score is too low, the report is revised iteratively.
 8. The final report is returned as JSON.
 
-**Example API Request**
-
-```json
-{
-  "topic": "Impact of AI on software engineering jobs"
-}
-```
-
-**Example API Response**
-
-```json
-{
-  "topic": "Impact of AI on software engineering jobs",
-  "score": 8,
-  "iterations": 1,
-  "report": "..."
-}
-```
 
 **Setup**
 
@@ -87,10 +79,4 @@ TAVILY_API_KEY=your_key_here
 uvicorn api.main:app --reload
 ```
 
-**API Docs**
 
-Visit:
-
-```plaintext
-http://127.0.0.1:8000/docs
-```
