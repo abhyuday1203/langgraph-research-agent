@@ -1,4 +1,4 @@
-# AI Multi-Agent Research System
+**AI Multi-Agent Research System**
 
 A production-style multi-agent AI research backend built using:
 
@@ -8,7 +8,7 @@ A production-style multi-agent AI research backend built using:
 - Tavily Search
 - Async orchestration
 
-## Features
+**Features**
 
 - Multi-agent workflow
 - Supervisor orchestration
@@ -19,45 +19,75 @@ A production-style multi-agent AI research backend built using:
 - FastAPI backend
 - JSON API responses
 
-## Architecture
+ **Architecture**
 
 FastAPI → LangGraph → Supervisor → Researcher → Writer → Critic
 
-## Setup
+**How It Works**
 
-### 1. Clone repo
+1. The user sends a research topic through the FastAPI endpoint.
+2. LangGraph initializes the workflow.
+3. The Supervisor agent decides which specialized agent runs next.
+4. The Researcher agent gathers information using Tavily Search.
+5. The Writer agent generates a structured report.
+6. The Critic agent evaluates report quality and assigns a score.
+7. If the score is too low, the report is revised iteratively.
+8. The final report is returned as JSON.
+
+**Example API Request**
+
+```json
+{
+  "topic": "Impact of AI on software engineering jobs"
+}
+```
+
+**Example API Response**
+
+```json
+{
+  "topic": "Impact of AI on software engineering jobs",
+  "score": 8,
+  "iterations": 1,
+  "report": "..."
+}
+```
+
+**Setup**
+
+**1. Clone repo**
 
 ```bash
 git clone <repo-url>
 cd research-agent
 ```
 
-### 2. Create virtual environment
+**2. Create virtual environment**
 
 ```bash
 python -m venv venv
 ```
 
-### 3. Install dependencies
+**3. Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Create `.env`
+**4. Create `.env`**
 
 ```env
 GROQ_API_KEY=your_key_here
 TAVILY_API_KEY=your_key_here
 ```
 
-### 5. Run server
+**5. Run server**
 
 ```bash
 uvicorn api.main:app --reload
 ```
 
-## API Docs
+**API Docs**
 
 Visit:
 
