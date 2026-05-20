@@ -44,6 +44,7 @@ Streamlit → LangGraph → Supervisor Agent → Researcher / Writer / Critic
 7. If the score is too low, the report is revised iteratively.
 8. The final report is returned as JSON.
 
+![Architecture](images/architecture.png)
 
 **Setup**
 
