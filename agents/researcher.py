@@ -6,6 +6,8 @@ from tools.search import search_tool
 
 print("GROQ KEY EXISTS:", bool(os.getenv("GROQ_API_KEY")))
 
+print("🔥 USING GPT OSS 20B RESEARCHER")
+
 llm = ChatGroq(model="openai/gpt-oss-20b", temperature=0)
 
 async def researcher_node(state: ResearchState) -> dict:
