@@ -2,7 +2,7 @@ from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage, AIMessage
 from graph.state import ResearchState
 
-llm = ChatGroq(model="llama-3.1-8b-instant", temperature=0.4)
+llm = ChatGroq(model="openai/gpt-oss-20b", temperature=0.4)
 
 
 async def writer_node(state: ResearchState) -> dict:
